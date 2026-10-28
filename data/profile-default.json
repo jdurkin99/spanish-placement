@@ -1,0 +1,15 @@
+{
+  "fields": [
+    { "key": "name", "label": "Name (optional)", "type": "text", "value": "" },
+    { "key": "nativeLanguage", "label": "Native language", "type": "text", "value": "English" },
+    { "key": "background", "label": "Spanish background", "type": "textarea", "value": "Took Spanish classes in school; now rusty." },
+    { "key": "targetVariety", "label": "Target variety", "type": "text", "value": "Mexican / Central American Spanish" },
+    { "key": "studyTime", "label": "Daily study time", "type": "select", "options": ["5–15 min/day", "15–30 min/day", "30–60 min/day", "60+ min/day"], "value": "15–30 min/day" },
+    { "key": "speakingPractice", "label": "Speaking practice", "type": "textarea", "value": "Friends/family; local meetups." },
+    { "key": "device", "label": "Main device", "type": "text", "value": "Phone browser" },
+    { "key": "interests", "label": "Interests (shows, music, sports, food, hobbies…)", "type": "textarea", "value": "", "placeholder": "e.g. Narcos, Bad Bunny, Liga MX, cooking, hiking" },
+    { "key": "goals", "label": "Goals (why Spanish? what situations?)", "type": "textarea", "value": "", "placeholder": "e.g. chat with family, travel to Oaxaca, understand podcasts" },
+    { "key": "grammarStart", "label": "Grammar test starting level", "type": "select", "options": ["A1", "A2", "B1", "B2"], "value": "A2", "help": "Where the adaptive grammar test begins. A2 suits “rusty school Spanish”. The test moves up or down from here." },
+    { "key": "notes", "label": "Notes for the tutor", "type": "textarea", "value": "" }
+  ]
+}

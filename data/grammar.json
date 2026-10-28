@@ -1,0 +1,176 @@
+{
+  "_about": "Grammar item bank. Each structure belongs to one CEFR level. Each item: id (unique), structure (key from 'structures'), q (sentence; ___ marks the gap), answer, distractors (exactly 3), optional en (English gloss, shown under the sentence), optional why (short rule, shown only in results). Add items freely: the adaptive engine uses 1 item per structure per level, then a 2nd item for structures you missed. 3+ items per structure lets retests rotate to unseen items. 'No sé' is added automatically. Variety: Latin American (ustedes, no vosotros).",
+  "structures": {
+    "ser_estar":        { "level": "A1", "label": "ser vs. estar (basics)" },
+    "agreement":        { "level": "A1", "label": "Gender/number agreement" },
+    "articles":         { "level": "A1", "label": "Articles" },
+    "present_regular":  { "level": "A1", "label": "Regular present tense" },
+    "irregulars_basic": { "level": "A1", "label": "Key irregulars (ser, estar, ir, tener, hacer)" },
+    "gustar":           { "level": "A1", "label": "gustar" },
+    "hay":              { "level": "A1", "label": "hay (vs. estar)" },
+    "possessives":      { "level": "A1", "label": "Possessives" },
+    "question_words":   { "level": "A1", "label": "Question words" },
+
+    "stem_changing":    { "level": "A2", "label": "Stem-changing verbs" },
+    "reflexives":       { "level": "A2", "label": "Reflexive verbs" },
+    "preterite_regular":   { "level": "A2", "label": "Preterite (regular)" },
+    "preterite_irregular": { "level": "A2", "label": "Preterite (irregular)" },
+    "imperfect":        { "level": "A2", "label": "Imperfect" },
+    "ir_a":             { "level": "A2", "label": "ir a + infinitive" },
+    "do_pronouns":      { "level": "A2", "label": "Direct object pronouns" },
+    "comparatives":     { "level": "A2", "label": "Comparatives" },
+    "estar_gerund":     { "level": "A2", "label": "estar + gerund" },
+
+    "pret_vs_imp":      { "level": "B1", "label": "Preterite vs. imperfect in context" },
+    "double_pronouns":  { "level": "B1", "label": "Double object pronouns (se lo)" },
+    "present_perfect":  { "level": "B1", "label": "Present perfect" },
+    "future":           { "level": "B1", "label": "Future tense" },
+    "conditional":      { "level": "B1", "label": "Conditional" },
+    "commands_pronouns":{ "level": "B1", "label": "Commands with pronouns" },
+    "subj_present":     { "level": "B1", "label": "Present subjunctive (wishes/emotion/doubt)" },
+    "por_para":         { "level": "B1", "label": "por vs. para" },
+    "relative_clauses": { "level": "B1", "label": "Relative clauses" },
+
+    "subj_conjunctions":{ "level": "B2", "label": "Subjunctive after conjunctions (para que, cuando, antes de que)" },
+    "imperfect_subj":   { "level": "B2", "label": "Imperfect subjunctive" },
+    "si_clauses":       { "level": "B2", "label": "Si-clauses (imperfect subj. + conditional)" },
+    "pluperfect":       { "level": "B2", "label": "Pluperfect" },
+    "se_impersonal":    { "level": "B2", "label": "Impersonal / passive se" },
+    "subj_relative":    { "level": "B2", "label": "Subjunctive in relative clauses" }
+  },
+  "items": [
+    { "id": "a1-serestar-1", "structure": "ser_estar", "q": "Mi hermana ___ doctora.", "answer": "es", "distractors": ["está", "hay", "son"], "why": "Profession → ser." },
+    { "id": "a1-serestar-2", "structure": "ser_estar", "q": "¿Dónde ___ el baño?", "answer": "está", "distractors": ["es", "hay", "son"], "why": "Location of a specific thing → estar." },
+    { "id": "a1-serestar-3", "structure": "ser_estar", "q": "Hoy (yo) ___ muy cansado.", "answer": "estoy", "distractors": ["soy", "estás", "es"], "why": "Temporary state → estar." },
+
+    { "id": "a1-agree-1", "structure": "agreement", "q": "Las casas son muy ___.", "answer": "bonitas", "distractors": ["bonito", "bonita", "bonitos"], "why": "Feminine plural noun → -as." },
+    { "id": "a1-agree-2", "structure": "agreement", "q": "Tengo un perro ___.", "answer": "negro", "distractors": ["negra", "negros", "negras"], "why": "Masculine singular." },
+    { "id": "a1-agree-3", "structure": "agreement", "q": "Mis amigos son muy ___.", "answer": "simpáticos", "distractors": ["simpático", "simpática", "simpáticas"], "why": "Masculine plural." },
+
+    { "id": "a1-art-1", "structure": "articles", "q": "___ problema es difícil.", "answer": "El", "distractors": ["La", "Los", "Las"], "why": "problema is masculine (Greek -ma words)." },
+    { "id": "a1-art-2", "structure": "articles", "q": "Necesito ___ mano para cargar esto.", "answer": "una", "distractors": ["un", "unos", "uno"], "why": "mano is feminine." },
+    { "id": "a1-art-3", "structure": "articles", "q": "___ agua está muy fría.", "answer": "El", "distractors": ["La", "Los", "Lo"], "why": "Feminine nouns starting with stressed a- take el in the singular." },
+
+    { "id": "a1-pres-1", "structure": "present_regular", "q": "Nosotros ___ en una oficina.", "answer": "trabajamos", "distractors": ["trabajan", "trabajo", "trabajas"], "why": "nosotros → -amos." },
+    { "id": "a1-pres-2", "structure": "present_regular", "q": "¿Tú ___ español?", "answer": "hablas", "distractors": ["habla", "hablo", "hablan"], "why": "tú → -as." },
+    { "id": "a1-pres-3", "structure": "present_regular", "q": "Mis padres ___ en Guadalajara.", "answer": "viven", "distractors": ["vive", "vivimos", "vivo"], "why": "ellos → -en." },
+
+    { "id": "a1-irr-1", "structure": "irregulars_basic", "q": "(Yo) ___ treinta años.", "answer": "tengo", "distractors": ["soy", "estoy", "tiene"], "why": "Age uses tener." },
+    { "id": "a1-irr-2", "structure": "irregulars_basic", "q": "Ellos ___ al mercado los sábados.", "answer": "van", "distractors": ["vamos", "va", "ven"], "why": "ir: voy, vas, va, vamos, van." },
+    { "id": "a1-irr-3", "structure": "irregulars_basic", "q": "¿Qué ___ (tú) los fines de semana?", "answer": "haces", "distractors": ["hace", "hago", "haz"], "why": "hacer, tú → haces (haz is the command)." },
+
+    { "id": "a1-gus-1", "structure": "gustar", "q": "A mí me ___ los tacos.", "answer": "gustan", "distractors": ["gusta", "gusto", "gustas"], "why": "Verb agrees with the thing liked (los tacos → plural)." },
+    { "id": "a1-gus-2", "structure": "gustar", "q": "¿A ti ___ gusta bailar?", "answer": "te", "distractors": ["me", "le", "tú"], "why": "a ti → te." },
+    { "id": "a1-gus-3", "structure": "gustar", "q": "A mis papás ___ gusta la música ranchera.", "answer": "les", "distractors": ["le", "los", "se"], "why": "Plural indirect object → les." },
+
+    { "id": "a1-hay-1", "structure": "hay", "q": "___ un banco cerca de aquí.", "answer": "Hay", "distractors": ["Está", "Es", "Tiene"], "why": "Existence of an unspecified thing → hay." },
+    { "id": "a1-hay-2", "structure": "hay", "q": "En el refri ___ dos cervezas.", "answer": "hay", "distractors": ["están", "es", "tiene"], "why": "hay + number/indefinite noun." },
+    { "id": "a1-hay-3", "structure": "hay", "q": "El libro ___ en la mesa.", "answer": "está", "distractors": ["hay", "es", "tiene"], "why": "Specific thing (el libro) → estar, not hay." },
+
+    { "id": "a1-pos-1", "structure": "possessives", "q": "Ellos viven con ___ abuela.", "answer": "su", "distractors": ["sus", "suya", "ellos"], "why": "su + singular noun." },
+    { "id": "a1-pos-2", "structure": "possessives", "q": "___ hermanos se llaman Ana y Luis.", "answer": "Mis", "distractors": ["Mi", "Mío", "Míos"], "why": "mis + plural noun." },
+    { "id": "a1-pos-3", "structure": "possessives", "q": "—¿Es ___ coche? —Sí, es mi coche.", "answer": "tu", "distractors": ["tú", "tuyo", "te"], "why": "tu (no accent) = your; tú = you." },
+
+    { "id": "a1-qw-1", "structure": "question_words", "q": "—¿___ vives? —En Monterrey.", "answer": "Dónde", "distractors": ["Cuándo", "Cómo", "Qué"], "why": "Place → dónde." },
+    { "id": "a1-qw-2", "structure": "question_words", "q": "—¿___ cuesta la camisa? —Doscientos pesos.", "answer": "Cuánto", "distractors": ["Cuál", "Qué", "Cómo"], "why": "Price/amount → cuánto." },
+    { "id": "a1-qw-3", "structure": "question_words", "q": "—¿___ es tu cumpleaños? —El 5 de mayo.", "answer": "Cuándo", "distractors": ["Dónde", "Quién", "Cuánto"], "why": "Time → cuándo." },
+
+    { "id": "a2-stem-1", "structure": "stem_changing", "q": "(Yo) no ___ encontrar mis llaves.", "answer": "puedo", "distractors": ["podo", "pudo", "puede"], "why": "poder: o → ue." },
+    { "id": "a2-stem-2", "structure": "stem_changing", "q": "¿A qué hora ___ la película?", "answer": "empieza", "distractors": ["empeza", "empiezan", "empezamos"], "why": "empezar: e → ie." },
+    { "id": "a2-stem-3", "structure": "stem_changing", "q": "Nosotros siempre ___ tacos al pastor.", "answer": "pedimos", "distractors": ["pidimos", "piden", "pido"], "why": "pedir: e → i, except nosotros." },
+
+    { "id": "a2-refl-1", "structure": "reflexives", "q": "(Yo) ___ levanto a las seis.", "answer": "me", "distractors": ["se", "te", "mi"], "why": "yo → me." },
+    { "id": "a2-refl-2", "structure": "reflexives", "q": "Mis hijos ___ bañan por la noche.", "answer": "se", "distractors": ["les", "los", "nos"], "why": "ellos → se." },
+    { "id": "a2-refl-3", "structure": "reflexives", "q": "¿A qué hora ___ (tú) normalmente?", "answer": "te acuestas", "distractors": ["acuestas", "se acuesta", "te acostas"], "why": "acostarse: te + o → ue." },
+
+    { "id": "a2-pretr-1", "structure": "preterite_regular", "q": "Ayer (yo) ___ con mi abuela por teléfono.", "answer": "hablé", "distractors": ["hablo", "habló", "hablaré"], "why": "Preterite yo -ar → -é." },
+    { "id": "a2-pretr-2", "structure": "preterite_regular", "q": "Anoche ellos ___ pizza.", "answer": "comieron", "distractors": ["comen", "comió", "comimos"], "why": "Preterite ellos -er → -ieron." },
+    { "id": "a2-pretr-3", "structure": "preterite_regular", "q": "¿Ya ___ (tú) la tarea?", "answer": "terminaste", "distractors": ["terminó", "terminastes", "termine"], "why": "Preterite tú → -aste (no final s)." },
+
+    { "id": "a2-preti-1", "structure": "preterite_irregular", "q": "El sábado pasado nosotros ___ a la playa.", "answer": "fuimos", "distractors": ["vamos", "fueron", "fuemos"], "why": "ir (preterite): fui, fuiste, fue, fuimos, fueron." },
+    { "id": "a2-preti-2", "structure": "preterite_irregular", "q": "Ayer (yo) no ___ tiempo de comer.", "answer": "tuve", "distractors": ["tení", "tuvo", "tengo"], "why": "tener → tuv-." },
+    { "id": "a2-preti-3", "structure": "preterite_irregular", "q": "¿Qué ___ (ustedes) el fin de semana?", "answer": "hicieron", "distractors": ["hacieron", "hicimos", "hizo"], "why": "hacer → hic-/hiz-." },
+
+    { "id": "a2-imp-1", "structure": "imperfect", "q": "Antes (nosotros) ___ al cine todos los viernes.", "answer": "íbamos", "distractors": ["vamos", "iban", "fuimos"], "why": "Habitual past → imperfect (ir: iba, íbamos)." },
+    { "id": "a2-imp-2", "structure": "imperfect", "q": "De niña, Ana ___ el pelo muy largo.", "answer": "tenía", "distractors": ["tiene", "tenió", "tuviera"], "why": "Description in the past → imperfect." },
+    { "id": "a2-imp-3", "structure": "imperfect", "q": "Cuando era niño, (yo) todos los días ___ fútbol con mis primos.", "answer": "jugaba", "distractors": ["juego", "jugara", "jugaré"], "why": "Habitual past → imperfect." },
+
+    { "id": "a2-ira-1", "structure": "ir_a", "q": "Mañana ___ a llover.", "answer": "va", "distractors": ["es", "vas", "ir"], "why": "ir a + infinitive; subject = it (3rd person)." },
+    { "id": "a2-ira-2", "structure": "ir_a", "q": "¿Qué vas a ___ este fin de semana?", "answer": "hacer", "distractors": ["haces", "hiciste", "hace"], "why": "After ir a → infinitive." },
+    { "id": "a2-ira-3", "structure": "ir_a", "q": "Nosotros ___ a visitar a mi tía.", "answer": "vamos", "distractors": ["van", "voy", "estamos"], "why": "nosotros → vamos a." },
+
+    { "id": "a2-do-1", "structure": "do_pronouns", "q": "—¿Tienes el libro? —Sí, ___ tengo.", "answer": "lo", "distractors": ["la", "le", "los"], "why": "el libro → lo." },
+    { "id": "a2-do-2", "structure": "do_pronouns", "q": "—¿Viste a Mariana? —Sí, ___ vi ayer.", "answer": "la", "distractors": ["le", "lo", "las"], "why": "Mariana (direct object, fem.) → la." },
+    { "id": "a2-do-3", "structure": "do_pronouns", "q": "Las tortillas… ¿quién ___ compró?", "answer": "las", "distractors": ["les", "los", "la"], "why": "las tortillas → las." },
+
+    { "id": "a2-comp-1", "structure": "comparatives", "q": "Mi hermano es ___ alto que yo.", "answer": "más", "distractors": ["tan", "muy", "mucho"], "why": "más … que." },
+    { "id": "a2-comp-2", "structure": "comparatives", "q": "Este restaurante es ___ que el otro.", "answer": "mejor", "distractors": ["bueno", "más mejor", "el mejor"], "why": "bueno → mejor (irregular comparative)." },
+    { "id": "a2-comp-3", "structure": "comparatives", "q": "Ana es tan inteligente ___ su hermana.", "answer": "como", "distractors": ["que", "de", "más"], "why": "tan … como." },
+
+    { "id": "a2-ger-1", "structure": "estar_gerund", "q": "Ahora mismo (yo) ___ comiendo.", "answer": "estoy", "distractors": ["soy", "voy", "tengo"], "why": "estar + -ndo." },
+    { "id": "a2-ger-2", "structure": "estar_gerund", "q": "¿Qué estás ___?", "answer": "haciendo", "distractors": ["hacer", "hecho", "haces"], "why": "Gerund of hacer → haciendo." },
+    { "id": "a2-ger-3", "structure": "estar_gerund", "q": "Los niños están ___ en el parque.", "answer": "jugando", "distractors": ["jugiendo", "juegan", "jugado"], "why": "-ar → -ando." },
+
+    { "id": "b1-pvi-1", "structure": "pret_vs_imp", "q": "(Yo) ___ la tele cuando sonó el teléfono.", "answer": "veía", "distractors": ["vi", "veo", "he visto"], "why": "Ongoing background action interrupted → imperfect." },
+    { "id": "b1-pvi-2", "structure": "pret_vs_imp", "q": "El año pasado (nosotros) ___ a México tres veces.", "answer": "fuimos", "distractors": ["íbamos", "vamos", "iremos"], "why": "Counted, completed events → preterite." },
+    { "id": "b1-pvi-3", "structure": "pret_vs_imp", "q": "Mi abuela ___ 80 años cuando aprendió a usar el celular.", "answer": "tenía", "distractors": ["tuvo", "tiene", "ha tenido"], "why": "Age/background in the past → imperfect." },
+    { "id": "b1-pvi-4", "structure": "pret_vs_imp", "q": "De repente, ___ (empezar) a llover y todos corrieron.", "answer": "empezó", "distractors": ["empezaba", "empieza", "ha empezado"], "why": "Sudden event (de repente) → preterite." },
+
+    { "id": "b1-dbl-1", "structure": "double_pronouns", "q": "—¿Le diste el regalo a tu mamá? —Sí, ___ di ayer.", "answer": "se lo", "distractors": ["le lo", "lo le", "se le"], "why": "le + lo → se lo." },
+    { "id": "b1-dbl-2", "structure": "double_pronouns", "q": "—¿Me prestas tu bici? —Sí, ___ presto.", "answer": "te la", "distractors": ["la te", "te lo", "se la"], "why": "Indirect (te) before direct (la = la bici)." },
+    { "id": "b1-dbl-3", "structure": "double_pronouns", "q": "Necesito las llaves. ¿Puedes ___?", "answer": "dármelas", "distractors": ["dármelos", "darlasme", "dárselas"], "why": "Attach: dar + me + las." },
+
+    { "id": "b1-pp-1", "structure": "present_perfect", "q": "Este año (yo) ___ mucho.", "answer": "he trabajado", "distractors": ["ha trabajado", "he trabajando", "hice trabajado"], "why": "haber (he) + participle." },
+    { "id": "b1-pp-2", "structure": "present_perfect", "q": "¿Alguna vez ___ (tú) el mole poblano?", "answer": "has probado", "distractors": ["has probando", "haber probado", "ha probado"], "why": "has + participle. (In Mexico you'll also hear ¿Alguna vez probaste…?)" },
+    { "id": "b1-pp-3", "structure": "present_perfect", "q": "Todavía no ___ (nosotros) la película.", "answer": "hemos visto", "distractors": ["hemos veído", "habemos visto", "hemos vista"], "why": "ver → visto (irregular participle)." },
+
+    { "id": "b1-fut-1", "structure": "future", "q": "Mañana (yo) ___ temprano.", "answer": "saldré", "distractors": ["saliré", "salgaré", "saldría"], "why": "salir → saldr- (future)." },
+    { "id": "b1-fut-2", "structure": "future", "q": "El próximo año mis primos ___ a visitarnos.", "answer": "vendrán", "distractors": ["venirán", "vendrían", "vinieron"], "why": "venir → vendr-." },
+    { "id": "b1-fut-3", "structure": "future", "q": "¿Dónde ___ mis llaves? No las encuentro.", "answer": "estarán", "distractors": ["estuvieran", "están siendo", "estaré"], "why": "Future of probability (I wonder where…)." },
+
+    { "id": "b1-cond-1", "structure": "conditional", "q": "Yo que tú, no ___ eso.", "answer": "haría", "distractors": ["haré", "hacería", "hiciera"], "why": "Advice → conditional; hacer → har-." },
+    { "id": "b1-cond-2", "structure": "conditional", "q": "¿___ (tú) pasarme la sal, por favor?", "answer": "Podrías", "distractors": ["Poderías", "Puedrías", "Podrá"], "why": "Polite request → conditional; poder → podr-." },
+    { "id": "b1-cond-3", "structure": "conditional", "q": "Me ___ viajar a Costa Rica algún día.", "answer": "encantaría", "distractors": ["encantarías", "encanto", "encantarían"], "why": "Wish → conditional; agrees with viajar (singular)." },
+
+    { "id": "b1-cmd-1", "structure": "commands_pronouns", "q": "Tu cuarto está desordenado. ¡___ ahora!", "answer": "Arréglalo", "distractors": ["Lo arreglas", "No lo arregles", "Arréglelo"], "why": "Affirmative tú command + attached pronoun." },
+    { "id": "b1-cmd-2", "structure": "commands_pronouns", "q": "No ___ (tú) eso a nadie.", "answer": "le digas", "distractors": ["dile", "le dices", "le di"], "why": "Negative tú command → no + pronoun + subjunctive." },
+    { "id": "b1-cmd-3", "structure": "commands_pronouns", "q": "Señora, ___ aquí, por favor.", "answer": "siéntese", "distractors": ["siéntate", "sentarse", "se sienta"], "why": "usted command of sentarse." },
+
+    { "id": "b1-subj-1", "structure": "subj_present", "q": "Espero que (tú) ___ bien.", "answer": "estés", "distractors": ["estás", "estar", "estarás"], "why": "Wish (espero que) → subjunctive." },
+    { "id": "b1-subj-2", "structure": "subj_present", "q": "Me alegra que ustedes ___ venir.", "answer": "puedan", "distractors": ["pueden", "podrán", "poder"], "why": "Emotion → subjunctive." },
+    { "id": "b1-subj-3", "structure": "subj_present", "q": "No creo que Juan ___ la verdad.", "answer": "diga", "distractors": ["dice", "dirá", "decir"], "why": "Doubt (no creo que) → subjunctive." },
+
+    { "id": "b1-pp4-1", "structure": "por_para", "q": "Este regalo es ___ ti.", "answer": "para", "distractors": ["por", "a", "en"], "why": "Recipient → para." },
+    { "id": "b1-pp4-2", "structure": "por_para", "q": "Gracias ___ tu ayuda.", "answer": "por", "distractors": ["para", "de", "a"], "why": "Gracias por (cause/exchange)." },
+    { "id": "b1-pp4-3", "structure": "por_para", "q": "Estudio ___ ser maestra.", "answer": "para", "distractors": ["por", "de", "a"], "why": "Purpose (in order to) → para." },
+    { "id": "b1-pp4-4", "structure": "por_para", "q": "Te cambio mi torta ___ tu sándwich.", "answer": "por", "distractors": ["para", "de", "en"], "why": "Exchange → por." },
+
+    { "id": "b1-rel-1", "structure": "relative_clauses", "q": "La mujer ___ vive al lado es maestra.", "answer": "que", "distractors": ["quien", "cuya", "lo que"], "why": "Restrictive clause (no commas) → que." },
+    { "id": "b1-rel-2", "structure": "relative_clauses", "q": "Esa es la casa ___ crecí.", "answer": "donde", "distractors": ["que", "cual", "quien"], "why": "Place → donde (or en que)." },
+    { "id": "b1-rel-3", "structure": "relative_clauses", "q": "No entiendo ___ dices.", "answer": "lo que", "distractors": ["que", "el que", "cual"], "why": "“what” (the thing that) → lo que." },
+
+    { "id": "b2-conj-1", "structure": "subj_conjunctions", "q": "Te llamo cuando ___ a casa.", "answer": "llegue", "distractors": ["llego", "llegaré", "llegaría"], "why": "cuando + future event → subjunctive." },
+    { "id": "b2-conj-2", "structure": "subj_conjunctions", "q": "Te lo explico para que lo ___.", "answer": "entiendas", "distractors": ["entiendes", "entender", "entenderás"], "why": "para que → always subjunctive." },
+    { "id": "b2-conj-3", "structure": "subj_conjunctions", "q": "Tenemos que salir antes de que ___ a llover.", "answer": "empiece", "distractors": ["empieza", "empezará", "empezaría"], "why": "antes de que → always subjunctive." },
+
+    { "id": "b2-impsubj-1", "structure": "imperfect_subj", "q": "Mi mamá quería que yo ___ médico.", "answer": "fuera", "distractors": ["sea", "era", "sería"], "why": "Past wish (quería que) → imperfect subjunctive." },
+    { "id": "b2-impsubj-2", "structure": "imperfect_subj", "q": "Me pidió que le ___ dinero.", "answer": "prestara", "distractors": ["prestaba", "prestaría", "presté"], "why": "Past request → imperfect subjunctive." },
+    { "id": "b2-impsubj-3", "structure": "imperfect_subj", "q": "Era importante que todos ___ a tiempo.", "answer": "llegaran", "distractors": ["llegaban", "llegarían", "llegaron"], "why": "Impersonal expression in the past → imperfect subjunctive." },
+
+    { "id": "b2-si-1", "structure": "si_clauses", "q": "Si ___ dinero, viajaría por todo el mundo.", "answer": "tuviera", "distractors": ["tengo", "tendría", "tenga"], "why": "Hypothetical si + imperfect subjunctive." },
+    { "id": "b2-si-2", "structure": "si_clauses", "q": "Si yo fuera tú, ___ con ella.", "answer": "hablaría", "distractors": ["hablaré", "hablara", "hablo"], "why": "Result clause → conditional." },
+    { "id": "b2-si-3", "structure": "si_clauses", "q": "¿Qué harías si ___ la lotería?", "answer": "ganaras", "distractors": ["ganarías", "ganas", "ganes"], "why": "Never conditional or present subjunctive after hypothetical si." },
+
+    { "id": "b2-plup-1", "structure": "pluperfect", "q": "Cuando llegamos, la película ya ___.", "answer": "había empezado", "distractors": ["ha empezado", "empezaba", "habría empezado"], "why": "Earlier than another past event → pluperfect." },
+    { "id": "b2-plup-2", "structure": "pluperfect", "q": "Antes de ese viaje, nunca ___ (yo) tacos de lengua.", "answer": "había comido", "distractors": ["he comido", "comía", "habré comido"], "why": "Experience before a past point → pluperfect." },
+    { "id": "b2-plup-3", "structure": "pluperfect", "q": "Me dijo que ya ___ (él) la cuenta.", "answer": "había pagado", "distractors": ["ha pagado", "habría pagando", "pagará"], "why": "Reported past-before-past → pluperfect." },
+
+    { "id": "b2-se-1", "structure": "se_impersonal", "q": "Aquí ___ español.", "answer": "se habla", "distractors": ["se hablan", "hablas se", "está hablado"], "why": "Passive se agrees with español (singular)." },
+    { "id": "b2-se-2", "structure": "se_impersonal", "q": "(Letrero) ___ casas.", "en": "(Sign) Houses for sale.", "answer": "Se venden", "distractors": ["Se vende", "Venden se", "Son vendido"], "why": "Passive se agrees with casas (plural). “Se vende casas” is common but non-standard." },
+    { "id": "b2-se-3", "structure": "se_impersonal", "q": "En México ___ cenar tarde.", "answer": "se suele", "distractors": ["se suelen", "suele se", "es solido"], "why": "Impersonal se + singular verb before an infinitive." },
+
+    { "id": "b2-subjrel-1", "structure": "subj_relative", "q": "Busco un departamento que ___ cerca del trabajo.", "answer": "esté", "distractors": ["está", "estaría", "estará"], "why": "Hypothetical/unknown antecedent → subjunctive." },
+    { "id": "b2-subjrel-2", "structure": "subj_relative", "q": "No conozco a nadie que ___ hablar japonés.", "answer": "sepa", "distractors": ["sabe", "supe", "sabría"], "why": "Non-existent antecedent (nadie) → subjunctive." },
+    { "id": "b2-subjrel-3", "structure": "subj_relative", "q": "Quiero un trabajo que me ___ viajar.", "answer": "permita", "distractors": ["permite", "permitiría", "permitir"], "why": "Desired, unknown thing → subjunctive." }
+  ]
+}

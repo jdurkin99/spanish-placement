@@ -1,0 +1,49 @@
+{
+  "_about": "Yes/no word recognition, LexTALE-Esp style. NOT the published LexTALE-Esp items (Izura, Cuetos & Brysbaert 2014); an equivalent built for this app. Real words span frequency ranks ~600 to ~150,000 in hermitdave/FrequencyWords es_full (2018). Pseudowords were checked to be absent from that 1.2M-form list. 'rank' is informational only. Scoring: words accepted - 2 x pseudowords accepted.",
+  "forms": {
+    "A": {
+      "words": [
+        { "w": "perro", "rank": 622 }, { "w": "nariz", "rank": 1693 }, { "w": "jaula", "rank": 4479 },
+        { "w": "alfombra", "rank": 4452 }, { "w": "colgar", "rank": 4403 }, { "w": "nube", "rank": 5250 },
+        { "w": "rodilla", "rank": 5318 }, { "w": "tejado", "rank": 6233 }, { "w": "tijeras", "rank": 7596 },
+        { "w": "cebolla", "rank": 8939 }, { "w": "cuchara", "rank": 8814 }, { "w": "pulmón", "rank": 8572 },
+        { "w": "sudor", "rank": 7480 }, { "w": "colchón", "rank": 8768 }, { "w": "ardilla", "rank": 9522 },
+        { "w": "morder", "rank": 10262 }, { "w": "estrecho", "rank": 10951 }, { "w": "grieta", "rank": 11171 },
+        { "w": "zanahoria", "rank": 12345 }, { "w": "terco", "rank": 12002 }, { "w": "sabroso", "rank": 12202 },
+        { "w": "escoba", "rank": 11185 }, { "w": "hormiga", "rank": 15786 }, { "w": "burlarse", "rank": 15098 },
+        { "w": "soplar", "rank": 15896 }, { "w": "colmena", "rank": 16444 }, { "w": "hervir", "rank": 16411 },
+        { "w": "barrer", "rank": 17215 }, { "w": "columpio", "rank": 20854 }, { "w": "ceja", "rank": 22053 },
+        { "w": "polilla", "rank": 23425 }, { "w": "ampolla", "rank": 23409 }, { "w": "cobija", "rank": 34465 },
+        { "w": "desmayarse", "rank": 28333 }, { "w": "granizo", "rank": 32295 }, { "w": "aguacate", "rank": 33190 },
+        { "w": "rascar", "rank": 34854 }, { "w": "trenza", "rank": 36356 }, { "w": "alcancía", "rank": 47801 },
+        { "w": "tartamudear", "rank": 50347 }
+      ],
+      "pseudowords": [
+        "flendo", "pelchar", "tondula", "esbarcio", "gronecer", "matiflo", "perdesco", "silpar", "cundrón", "ravesto",
+        "trincoso", "almodera", "sobrijar", "fesquillo", "plunero", "dravia", "escamir", "torbelo", "chirpeta", "venuello"
+      ]
+    },
+    "B": {
+      "words": [
+        { "w": "mesa", "rank": 828 }, { "w": "cuello", "rank": 1321 }, { "w": "dedo", "rank": 1889 },
+        { "w": "apagar", "rank": 4917 }, { "w": "escalera", "rank": 3053 }, { "w": "cajón", "rank": 5197 },
+        { "w": "pañuelo", "rank": 5596 }, { "w": "chiflado", "rank": 7647 }, { "w": "mostrador", "rank": 8575 },
+        { "w": "ajo", "rank": 9138 }, { "w": "tenedor", "rank": 10326 }, { "w": "buzón", "rank": 7391 },
+        { "w": "hondo", "rank": 8585 }, { "w": "mejilla", "rank": 8905 }, { "w": "ladrillo", "rank": 10441 },
+        { "w": "mareado", "rank": 10912 }, { "w": "relámpago", "rank": 11746 }, { "w": "zumbido", "rank": 12566 },
+        { "w": "sapo", "rank": 12013 }, { "w": "flojo", "rank": 13078 }, { "w": "ruidoso", "rank": 12385 },
+        { "w": "charco", "rank": 13453 }, { "w": "hipo", "rank": 15201 }, { "w": "sartén", "rank": 14313 },
+        { "w": "rocío", "rank": 16173 }, { "w": "ombligo", "rank": 16230 }, { "w": "masticar", "rank": 16683 },
+        { "w": "ensuciar", "rank": 21294 }, { "w": "tibio", "rank": 20644 }, { "w": "tropezar", "rank": 22168 },
+        { "w": "áspero", "rank": 25716 }, { "w": "moretón", "rank": 25983 }, { "w": "tapete", "rank": 27662 },
+        { "w": "babosa", "rank": 27908 }, { "w": "estornudar", "rank": 30229 }, { "w": "arrodillarse", "rank": 33241 },
+        { "w": "agrio", "rank": 35906 }, { "w": "regañar", "rank": 39888 }, { "w": "muleta", "rank": 33711 },
+        { "w": "pezuña", "rank": 51470 }
+      ],
+      "pseudowords": [
+        "garpiento", "lusquear", "mondreda", "pacifrar", "trosquín", "bilcoso", "cárpula", "nespelar", "fruñir", "olpigo",
+        "cendrisa", "rasbón", "tepilar", "abusmar", "golfrino", "mintejo", "escripia", "cofrido", "mesguero", "palustrón"
+      ]
+    }
+  }
+}

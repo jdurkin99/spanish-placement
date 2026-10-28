@@ -1,0 +1,33 @@
+{
+  "_about": "Production check: see English, type Spanish. 'accept' lists every accepted answer (articles el/la/los/las/un/una are ignored, capitalization and punctuation ignored). A missing accent is still counted correct but flagged. 'band' = frequency band of the main answer.",
+  "forms": {
+    "A": [
+      { "en": "always", "accept": ["siempre"], "band": "1k" },
+      { "en": "city", "accept": ["ciudad"], "band": "1k" },
+      { "en": "time (as in “I don't have time”)", "accept": ["tiempo"], "band": "1k" },
+      { "en": "near, close (by)", "accept": ["cerca"], "band": "1k" },
+      { "en": "still (as in “still here”)", "accept": ["todavía", "aún"], "band": "1k" },
+      { "en": "to wait", "accept": ["esperar"], "band": "1k" },
+      { "en": "to look for", "accept": ["buscar"], "band": "1k" },
+      { "en": "tired (a man)", "accept": ["cansado"], "band": "2k" },
+      { "en": "however (two words)", "accept": ["sin embargo"], "band": "1k" },
+      { "en": "to forget", "accept": ["olvidar", "olvidarse"], "band": "3k" },
+      { "en": "to miss (someone you love)", "accept": ["extrañar"], "band": "10k" },
+      { "en": "to save (money)", "accept": ["ahorrar"], "band": "10k" }
+    ],
+    "B": [
+      { "en": "never", "accept": ["nunca", "jamás"], "band": "1k" },
+      { "en": "people", "accept": ["gente", "personas"], "band": "1k" },
+      { "en": "already", "accept": ["ya"], "band": "1k" },
+      { "en": "to find", "accept": ["encontrar", "hallar"], "band": "1k" },
+      { "en": "enough", "accept": ["bastante", "suficiente", "suficientes", "bastantes"], "band": "1k" },
+      { "en": "the bill / check (at a restaurant)", "accept": ["cuenta"], "band": "1k" },
+      { "en": "to learn", "accept": ["aprender"], "band": "2k" },
+      { "en": "to try (to do something)", "accept": ["intentar", "tratar", "tratar de", "procurar"], "band": "2k" },
+      { "en": "to bring", "accept": ["traer"], "band": "2k" },
+      { "en": "to borrow (two words)", "accept": ["pedir prestado", "pedir prestada"], "band": "5k" },
+      { "en": "to rent (an apartment)", "accept": ["rentar", "alquilar", "arrendar"], "band": "10k" },
+      { "en": "to get angry", "accept": ["enojarse", "enfadarse"], "band": "10k" }
+    ]
+  }
+}
