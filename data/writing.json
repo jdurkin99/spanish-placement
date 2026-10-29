@@ -1,0 +1,40 @@
+{
+  "_about": "Writing tasks, one per level band. Not auto-scored: the full text goes into the results packet for the tutor to assess. Each task: id, level, minutes (suggested), words [min, max], prompt (English instructions), optional points (things to include). {interests} is replaced with the Interests field from your profile (or a generic topic if empty). Skipping a task is allowed and reported.",
+  "interestsFallback": "something you enjoy doing in your free time",
+  "forms": {
+    "A": [
+      {
+        "id": "wA-a2", "level": "A2", "minutes": 4, "words": [30, 60],
+        "prompt": "Write a WhatsApp message to a Mexican friend inviting them to do something with you this weekend.",
+        "points": ["What you want to do and where", "Day and time", "Ask what they think"]
+      },
+      {
+        "id": "wA-b1", "level": "B1", "minutes": 5, "words": [70, 120],
+        "prompt": "Tell a friend about a trip or outing that didn't go as planned.",
+        "points": ["Where you went and with whom", "What went wrong", "How it ended and how you felt"]
+      },
+      {
+        "id": "wA-b2", "level": "B2", "minutes": 6, "words": [100, 180],
+        "prompt": "Write a short opinion post: is it better to learn a language with classes or by living it (friends, shows, music)? Give reasons and an example.",
+        "points": ["Your position", "At least two reasons", "One counter-argument and your answer to it"]
+      }
+    ],
+    "B": [
+      {
+        "id": "wB-a2", "level": "A2", "minutes": 4, "words": [30, 60],
+        "prompt": "Write a short email to a host family in Guatemala introducing yourself before your visit.",
+        "points": ["Who you are and what you do", "What you like", "One question for them"]
+      },
+      {
+        "id": "wB-b1", "level": "B1", "minutes": 5, "words": [70, 120],
+        "prompt": "Describe how you got into {interests}, and what you like about it now compared to when you started.",
+        "points": ["How it started (past)", "What it was like back then", "What it's like now"]
+      },
+      {
+        "id": "wB-b2", "level": "B2", "minutes": 6, "words": [100, 180],
+        "prompt": "A friend is thinking of moving from a small town to a big city for work. Write them a message giving advice: what should they consider, and what would you do in their place?",
+        "points": ["Advantages and disadvantages", "Advice (recommend that…)", "What you would do if you were them"]
+      }
+    ]
+  }
+}

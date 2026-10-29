@@ -15,8 +15,18 @@ A phone-first, static placement test for an AI-tutored Spanish course. Take the 
 | Vocabulary b: meaning check | ~5 min | 8 words per frequency band (1k, 2k, 3k, 5k, 10k) plus 8 Mexican/Central American words. 4 options plus “No sé”, scored with a correction for guessing. Gives an estimated vocabulary size and % known per band |
 | Vocabulary c: production | ~3 min | 12 English → Spanish typed answers. Accents are optional but flagged |
 | Grammar (adaptive) | ≤15 min | 33 structures, A1–B2, 101 items. Starts at A2 (set in Profile), then moves up or down level by level |
+| Reading | ~15 min | Up to 4 texts (A1 → B2), 4 questions each. Stops after a text you score below 50% on |
+| Listening | ~10 min | Up to 4 clips (A1 → B2), 3 questions each, 2 plays per clip. **Audio is placeholder**: until you add recordings, the phone's Spanish voice reads the transcripts (see `audio/README.md`) |
+| Writing | ~15 min | 3 tasks (A2, B1, B2) typed on your phone. Not auto-scored: the texts go in the packet for your tutor to grade |
+| Speaking | ~12 min | a. 20-statement can-do self-assessment. b. 3 prompts you answer aloud; the browser's speech recognition transcribes you (editable). Nothing is recorded or stored except the text |
 
-Vocabulary has Forms **A** and **B**, and retests alternate between them. Grammar retests prefer items you haven't seen before.
+Every section has Forms **A** and **B**, and retests alternate between them. Grammar retests prefer items you haven't seen before. The speaking can-do statements stay the same each time so you can see change.
+
+### Reading and listening levels
+One passage or clip per level, in order. A level passes at ≥66% (3/4 or 2/3), and the section stops after a passage below 50%. Level = highest level passed with every easier level also passed.
+
+### Speaking on your phone
+Transcription uses the browser's built-in speech recognition (Chrome on Android; Safari on iPhone needs Siri/Dictation turned on). The first time, allow microphone access. If recognition isn't available, you get a timer and can type a rough version of what you said.
 
 ### How the grammar test adapts
 1. One item per structure at the current level.
@@ -39,6 +49,10 @@ All content is in `data/`. You never need to touch `js/`.
 | `vocab-meaning.json` | Meaning-check items: `w`, `band`, `answer`, 3 `distractors` |
 | `vocab-production.json` | `en` prompt and `accept` list of Spanish answers |
 | `grammar.json` | `structures` (each tagged with a CEFR level) and `items` (`q` with `___`, `answer`, 3 `distractors`, optional `en` and `why`) |
+| `reading.json` | Passages per form (`level`, `title`, `text`, `questions`) |
+| `listening.json` | Clips per form (`audio` placeholder, `transcript`, `questions`), voice settings, `maxPlays` |
+| `writing.json` | Writing tasks per form (`prompt`, `points`, `words` [min, max], `minutes`); `{interests}` is filled from your profile |
+| `speaking.json` | Can-do statements, speaking prompts per form, self-rating questions |
 
 To add a grammar item, copy an existing one, give it a new unique `id`, and set its `structure`. To add a new structure, add it under `structures` with a `level` and `label`, then add 2 or more items for it. 3 or more lets retests rotate.
 
@@ -48,7 +62,7 @@ After editing, run the checker (needs Node.js):
 node tools/validate.mjs
 ```
 
-It catches duplicate IDs, a wrong number of distractors, an answer that's also a distractor, structures with too few items, and missing required Form A words.
+It catches duplicate IDs, a wrong number of distractors, an answer that's also a distractor, structures with too few items, passages out of level order, and missing required Form A words. It also lists listening clips that still use placeholder audio.
 
 > Note: if you edit a form's items while a test is in progress, that attempt keeps the items it started with. Finished results are stored with your answers, so old results stay readable.
 
@@ -100,8 +114,12 @@ css/styles.css      mobile-first styles (light/dark)
 js/app.js           router, home, profile, results, backup views
 js/vocab.js         vocabulary parts and scoring
 js/grammar.js       adaptive grammar engine and scoring
+js/comprehension.js reading + listening (shared engine, text-to-speech fallback)
+js/writing.js       writing tasks
+js/speaking.js      can-do checklist + speaking tasks with speech recognition
 js/report.js        results packet text
 js/store.js         localStorage state, import/export
 data/*.json         all test content and settings
+audio/              listening recordings go here (placeholder for now)
 tools/validate.mjs  data checker
 ```

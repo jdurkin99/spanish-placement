@@ -220,3 +220,31 @@ summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; al
   transition: opacity .2s, transform .2s;
 }
 #toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* Reading / listening */
+.passage {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px; margin-bottom: 16px; font-size: 1.08rem; line-height: 1.65;
+}
+.passage h2, .player h2 { font-size: 1.05rem; color: var(--muted); }
+.passage p { margin: 0 0 .75em; }
+.player .btn { margin-top: 4px; }
+.muted-inv { opacity: .8; font-weight: 400; }
+.mcq { border: 0; padding: 0; margin: 0 0 22px; display: grid; gap: 8px; min-width: 0; }
+.mcq legend { font-weight: 600; padding: 0; margin-bottom: 8px; }
+.mcq .btn { margin: 0; min-height: 52px; text-align: left; justify-content: flex-start; }
+.opt.sel { border: 2px solid var(--primary); background: var(--primary-soft); font-weight: 600; }
+.btn:disabled { opacity: .45; cursor: default; }
+
+/* Writing / speaking tasks */
+.task-prompt { font-size: 1.1rem; font-weight: 600; margin-top: 0; }
+.task ul { margin: 0 0 8px; padding-left: 1.2em; }
+.wc-row { display: flex; justify-content: space-between; gap: 8px; margin: 6px 2px 12px; }
+.ok-text { color: var(--ok); font-weight: 600; }
+.check { display: flex; gap: 10px; align-items: center; min-height: 44px; font-size: .95rem; }
+.check input { width: 22px; height: 22px; flex: none; }
+.rec { text-align: center; margin: 8px 0 16px; }
+.rec-timer { font-size: 2rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.seg { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.seg .btn { justify-content: center; text-align: center; font-size: .95rem; min-height: 48px; }
+.quote { white-space: pre-wrap; background: var(--bg); padding: 10px 12px; border-radius: 10px; }

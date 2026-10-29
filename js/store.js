@@ -75,3 +75,10 @@ export function lastAttempt(section) {
   const list = attemptsFor(section);
   return list[list.length - 1] || null;
 }
+
+// Next alternate form for a retest (A → B → A …).
+export function nextForm(section, forms) {
+  const last = lastAttempt(section);
+  if (!last || !forms.includes(last.form)) return forms[0];
+  return forms[(forms.indexOf(last.form) + 1) % forms.length];
+}

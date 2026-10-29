@@ -1,0 +1,89 @@
+{
+  "_about": "Reading comprehension. One passage per CEFR level, taken in order A1 → B2. A passage passes at ≥ comprehension.passThreshold (config.json); the section stops early after a passage scored below comprehension.stopBelow. Questions are in English so they test understanding of the Spanish, not of the question. Each question: q, answer, distractors (exactly 3). 'No sé' is added automatically. Settings: Mexican / Central American.",
+  "forms": {
+    "A": [
+      {
+        "id": "rA-a1", "level": "A1", "title": "Un mensaje de Luis",
+        "text": "Hola, Marta. Soy Luis. Hoy no voy a la oficina porque estoy enfermo. Tengo fiebre y me duele mucho la cabeza. ¿Le puedes decir a la jefa, por favor? Creo que mañana voy a estar bien. Ah, y la reunión con los clientes es el jueves a las diez, no el miércoles. ¡Gracias!",
+        "questions": [
+          { "q": "Why isn't Luis going to the office today?", "answer": "He is sick.", "distractors": ["He is on vacation.", "His car broke down.", "He has a meeting with clients."] },
+          { "q": "What does Luis ask Marta to do?", "answer": "Tell the boss.", "distractors": ["Call a doctor.", "Bring him medicine.", "Cancel the meeting."] },
+          { "q": "When is the meeting with the clients?", "answer": "Thursday at ten.", "distractors": ["Wednesday at ten.", "Tomorrow at two.", "Thursday at two."] },
+          { "q": "How does Luis think he'll be tomorrow?", "answer": "Fine.", "distractors": ["Still sick.", "At the hospital.", "Very tired."] }
+        ]
+      },
+      {
+        "id": "rA-a2", "level": "A2", "title": "Clases de cocina poblana",
+        "text": "¿Te gusta cocinar? ¡Aprende a preparar platillos típicos de Puebla con Doña Carmen! Las clases son los sábados de 10 de la mañana a 1 de la tarde, en el mercado de El Carmen (local 14). El precio es de 450 pesos por clase e incluye todos los ingredientes. Los niños menores de 12 años pagan la mitad. No necesitas experiencia, pero sí traer un delantal. Este mes vamos a preparar mole poblano y chiles en nogada. Los grupos son pequeños, máximo diez personas, así que es necesario reservar por WhatsApp al 222 555 0198.",
+        "questions": [
+          { "q": "When are the classes?", "answer": "Saturday mornings.", "distractors": ["Every evening.", "Sunday afternoons.", "Weekdays from 10 to 1."] },
+          { "q": "How much does a 10-year-old pay?", "answer": "225 pesos.", "distractors": ["450 pesos.", "Nothing.", "100 pesos."] },
+          { "q": "What do you have to bring?", "answer": "An apron.", "distractors": ["The ingredients.", "A recipe book.", "Your own knives."] },
+          { "q": "Why should you reserve?", "answer": "The groups are small.", "distractors": ["The price goes up on Saturday.", "The market closes early.", "Doña Carmen only teaches children."] }
+        ]
+      },
+      {
+        "id": "rA-b1", "level": "B1", "title": "Mi primer año en la Ciudad de México",
+        "text": "Llegué a la Ciudad de México desde Quetzaltenango hace un año para estudiar enfermería. Al principio todo me parecía enorme y caótico. Lo que más me costó fue el transporte: la primera semana me perdí dos veces en el metro y una vez tomé un camión que iba en la dirección contraria. Además, aunque en Guatemala también hablamos español, aquí la gente usa muchas palabras que yo no conocía, y a veces me daba pena preguntar. Todo cambió cuando empecé a trabajar los fines de semana en una cafetería. Mis compañeros me enseñaron a moverme por la ciudad y me invitaban a comer con sus familias. Todavía extraño mucho a mi mamá y la comida de mi abuela, pero ya no me siento sola. Cuando termine la carrera, me gustaría trabajar unos años aquí antes de regresar.",
+        "questions": [
+          { "q": "What was hardest for her at first?", "answer": "Getting around the city.", "distractors": ["Finding a place to live.", "Her nursing classes.", "Making money."] },
+          { "q": "Why didn't she always ask what words meant?", "answer": "She felt embarrassed.", "distractors": ["Nobody would answer her.", "She didn't have time.", "She already knew them from Guatemala."] },
+          { "q": "What changed her experience?", "answer": "A weekend job where coworkers helped her.", "distractors": ["Moving closer to the metro.", "Her mother coming to visit.", "Switching to a different university."] },
+          { "q": "What are her plans?", "answer": "Work in Mexico City for a few years, then go back.", "distractors": ["Go back to Guatemala as soon as possible.", "Open her own café.", "Stay in Mexico permanently."] }
+        ]
+      },
+      {
+        "id": "rA-b2", "level": "B2", "title": "Opinión: ¿turismo o desplazamiento?",
+        "text": "Nadie niega que el turismo ha traído empleos y dinero a barrios como la Roma o la Condesa. Sin embargo, sería ingenuo pensar que ese dinero se reparte de manera equitativa. En los últimos cinco años, las rentas han subido tanto que muchas familias que vivían allí desde hace generaciones se han visto obligadas a mudarse a la periferia, a dos horas de su trabajo. Los defensores de las plataformas de alquiler temporal argumentan que cualquiera tiene derecho a sacarle provecho a su propiedad, y en principio tienen razón. El problema no es el visitante que llega con su mochila, sino la falta de reglas: mientras no se limite el número de departamentos destinados exclusivamente a turistas, el barrio seguirá perdiendo a la gente que lo hizo atractivo en primer lugar. Regular no significa prohibir; significa decidir, entre todos, qué tipo de ciudad queremos.",
+        "questions": [
+          { "q": "What is the author's main point?", "answer": "Short-term rentals need limits so residents aren't pushed out.", "distractors": ["Tourism should be banned in these neighborhoods.", "Tourism has brought no benefits to the city.", "Tourists behave badly and should be fined."] },
+          { "q": "What does the author concede to defenders of rental platforms?", "answer": "In principle, owners may profit from their property.", "distractors": ["Rents haven't really gone up.", "Families chose to move voluntarily.", "Regulation would be impossible."] },
+          { "q": "“Sería ingenuo pensar que…” means the author thinks this idea is:", "answer": "naive / unrealistic.", "distractors": ["obvious.", "dangerous.", "already proven."] },
+          { "q": "According to the text, who made these neighborhoods attractive?", "answer": "The long-time residents.", "distractors": ["The tourists.", "The rental platforms.", "The city government."] }
+        ]
+      }
+    ],
+    "B": [
+      {
+        "id": "rB-a1", "level": "A1", "title": "La familia de Sofía",
+        "text": "Me llamo Sofía y tengo veinticinco años. Vivo en Guadalajara con mis papás y mi hermano menor, Diego. Él tiene quince años y le gusta mucho el fútbol. Mi papá es taxista y mi mamá trabaja en una farmacia. Yo soy maestra de inglés en una escuela primaria. Los domingos comemos en casa de mi abuela. Ella cocina pozole y siempre hay mucha gente.",
+        "questions": [
+          { "q": "Who does Sofía live with?", "answer": "Her parents and her brother.", "distractors": ["Her grandmother.", "Her husband and son.", "Alone."] },
+          { "q": "What does Diego like?", "answer": "Soccer.", "distractors": ["Cooking.", "English.", "Taxis."] },
+          { "q": "What is Sofía's job?", "answer": "English teacher.", "distractors": ["Pharmacist.", "Taxi driver.", "Cook."] },
+          { "q": "What happens on Sundays?", "answer": "They eat at her grandmother's house.", "distractors": ["They go to a soccer game.", "Sofía works at the school.", "They eat at a restaurant."] }
+        ]
+      },
+      {
+        "id": "rB-a2", "level": "A2", "title": "Invitación",
+        "text": "¡Hola, prima! Te escribo para invitarte a los quince años de Valeria. La fiesta va a ser el sábado 14 de diciembre en el salón Los Arcos, en la calle Hidalgo, enfrente de la iglesia. La misa empieza a las cinco y la fiesta a las ocho. Si vienes en camión desde Morelia, bájate en la central y toma un taxi; está a diez minutos. Puedes quedarte en mi casa, ya preparé el cuarto de visitas. Por favor, avísame antes del lunes si vas a venir, porque tengo que confirmar el número de invitados. ¡Ojalá puedas venir!",
+        "questions": [
+          { "q": "What is the event?", "answer": "Valeria's fifteenth birthday party.", "distractors": ["A wedding.", "A church festival.", "A family reunion in Morelia."] },
+          { "q": "Where is the party hall?", "answer": "Across from the church.", "distractors": ["Next to the bus station.", "In Morelia.", "At the writer's house."] },
+          { "q": "What does the writer offer?", "answer": "A place to stay.", "distractors": ["A ride from Morelia.", "To pay for the bus.", "A dress for the party."] },
+          { "q": "Why does she need an answer before Monday?", "answer": "She has to confirm the number of guests.", "distractors": ["The bus tickets sell out.", "The party might be canceled.", "The guest room may be taken."] }
+        ]
+      },
+      {
+        "id": "rB-b1", "level": "B1", "title": "Subiendo al volcán Acatenango",
+        "text": "El mes pasado por fin subí el Acatenango, en Guatemala. Salimos de Antigua a las ocho de la mañana con un guía y otros seis turistas. Nos habían dicho que la subida era difícil, pero no me imaginaba que lo sería tanto: caminamos seis horas, casi siempre cuesta arriba, y con la altura cada paso me costaba el doble. A mitad del camino empezó a llover y pensé seriamente en regresar. El guía nos convenció de seguir, y valió la pena. Esa noche, desde el campamento, vimos al volcán de Fuego hacer erupción cada veinte minutos. Hacía un frío terrible y casi no dormí, pero fue una de las experiencias más impresionantes de mi vida. Si lo vuelvo a hacer, llevaré mejores guantes y contrataré a alguien que me cargue la mochila.",
+        "questions": [
+          { "q": "How was the climb compared to what the writer expected?", "answer": "Harder than expected.", "distractors": ["Easier than expected.", "Exactly as described.", "Shorter than expected."] },
+          { "q": "Why did the writer think about turning back?", "answer": "It started raining halfway up.", "distractors": ["The guide got lost.", "The volcano erupted.", "Another tourist got hurt."] },
+          { "q": "What did they see from the camp?", "answer": "Another volcano erupting.", "distractors": ["The sunrise over Antigua.", "A lightning storm.", "Lava on Acatenango."] },
+          { "q": "What would the writer do differently?", "answer": "Bring better gloves and pay someone to carry the backpack.", "distractors": ["Go in the dry season.", "Not go with a guide.", "Leave earlier in the morning."] }
+        ]
+      },
+      {
+        "id": "rB-b2", "level": "B2", "title": "El agua que no llega",
+        "text": "Para millones de habitantes del Valle de México, abrir la llave y que no salga nada ya no es una emergencia, sino parte de la rutina. Paradójicamente, la ciudad se construyó sobre un lago y recibe más lluvia al año que Londres. ¿Cómo se explica entonces la escasez? Los especialistas coinciden en varios factores: una red de tuberías tan vieja que pierde cerca del cuarenta por ciento del agua antes de que llegue a los hogares, la sobreexplotación de los acuíferos, que provoca que el suelo se hunda varios centímetros al año, y una dependencia excesiva de sistemas que traen el agua desde cientos de kilómetros. Aunque las autoridades han prometido inversiones, los expertos advierten que, a menos que se reparen las fugas y se aproveche el agua de lluvia, cualquier solución será temporal.",
+        "questions": [
+          { "q": "What is “paradoxical” about the situation?", "answer": "The city lacks water although it gets a lot of rain and was built on a lake.", "distractors": ["The city has plenty of water but people waste it.", "London has less rain but more water problems.", "The authorities refuse to invest money."] },
+          { "q": "What happens to about 40% of the water?", "answer": "It's lost through leaks in old pipes.", "distractors": ["It's sent to other cities.", "It's used by factories.", "It evaporates from the lake."] },
+          { "q": "What is one effect of over-pumping the aquifers?", "answer": "The ground is sinking.", "distractors": ["The rain has decreased.", "The pipes freeze.", "The lake has refilled."] },
+          { "q": "“A menos que se reparen las fugas…” The experts say solutions will be temporary:", "answer": "unless the leaks are fixed.", "distractors": ["because the leaks were fixed.", "even if the leaks are fixed.", "until the leaks get worse."] }
+        ]
+      }
+    ]
+  }
+}

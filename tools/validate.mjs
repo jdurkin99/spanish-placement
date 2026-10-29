@@ -13,6 +13,10 @@ const meaning = load('vocab-meaning.json');
 const production = load('vocab-production.json');
 const grammar = load('grammar.json');
 load('profile-default.json');
+const reading = load('reading.json');
+const listening = load('listening.json');
+const writing = load('writing.json');
+const speaking = load('speaking.json');
 
 const bandIds = new Set([...config.vocab.bands.map(b => b.id), config.vocab.regionalBand.id]);
 
@@ -70,10 +74,42 @@ Object.entries(grammar.structures).forEach(([k, s]) => {
   else if (n < 3) warn.push(`grammar structure ${k}: only ${n} items (3+ lets retests rotate)`);
 });
 
+// Reading / listening
+const cLevels = config.comprehension.levels;
+const seenIds = new Set();
+for (const [name, data] of [['reading', reading], ['listening', listening]]) {
+  for (const [form, list] of Object.entries(data.forms)) {
+    let last = -1;
+    list.forEach(p => {
+      const where = `${name} ${form} ${p.id}`;
+      if (seenIds.has(p.id)) err(`${where}: duplicate id`);
+      seenIds.add(p.id);
+      const li = cLevels.indexOf(p.level);
+      if (li < 0) err(`${where}: bad level ${p.level}`);
+      if (li <= last) err(`${where}: passages must be in increasing level order`);
+      last = li;
+      if (name === 'reading' && !p.text) err(`${where}: missing text`);
+      if (name === 'listening' && !p.transcript) err(`${where}: missing transcript (needed for the voice fallback)`);
+      if (!p.questions?.length) err(`${where}: no questions`);
+      p.questions?.forEach((q, i) => checkMC(`${where} q${i + 1}`, q));
+    });
+  }
+}
+const placeholders = Object.values(listening.forms).flat().filter(c => c.audio?.placeholder || !c.audio?.src);
+if (placeholders.length) warn.push(`listening: ${placeholders.length} clip(s) still use PLACEHOLDER audio (device voice will be used): ${placeholders.map(c => c.id).join(', ')}`);
+
+// Writing / speaking
+for (const [form, tasks] of Object.entries(writing.forms)) tasks.forEach(t => {
+  if (!t.prompt || !Array.isArray(t.words) || t.words.length !== 2 || t.words[0] > t.words[1]) err(`writing ${form} ${t.id}: needs prompt and words [min, max]`);
+});
+speaking.canDo.forEach((c, i) => cLevels.includes(c.level) || err(`speaking canDo #${i}: bad level ${c.level}`));
+cLevels.forEach(l => speaking.canDo.some(c => c.level === l) || err(`speaking canDo: no statements for ${l}`));
+for (const [form, tasks] of Object.entries(speaking.tasks)) tasks.forEach(t => t.prompt || err(`speaking ${form} ${t.id}: missing prompt`));
+
 warn.forEach(w => console.log('warning:', w));
 if (errors.length) {
   errors.forEach(e => console.log('ERROR:', e));
   process.exit(1);
 }
 const counts = config.forms.map(f => `Form ${f}: ${lextale.forms[f].words.length}+${lextale.forms[f].pseudowords.length} yes/no, ${meaning.forms[f].length} meaning, ${production.forms[f].length} production`).join('; ');
-console.log(`OK. ${counts}; grammar: ${grammar.items.length} items, ${Object.keys(grammar.structures).length} structures.`);
+console.log(`OK. ${counts}; grammar: ${grammar.items.length} items, ${Object.keys(grammar.structures).length} structures; reading/listening/writing/speaking checked.`);

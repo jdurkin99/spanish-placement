@@ -1,0 +1,48 @@
+{
+  "_about": "Speaking has two parts. (a) Can-do self-assessment: rate each statement; level = highest level where the average is ≥ canDoThreshold and all lower levels also meet it (easily = 1, with effort = 0.5, not yet = 0). The same statements are used on every attempt so you can track change. (b) Speaking tasks: speak for up to maxSeconds. If the browser supports speech recognition, it writes down what it heard (editable); otherwise you can type a rough version or skip. Audio is never stored or uploaded by this app. The transcript, length and your self-ratings go into the results packet.",
+  "canDoThreshold": 0.7,
+  "canDo": [
+    { "level": "A1", "text": "Introduce myself: name, where I'm from, what I do." },
+    { "level": "A1", "text": "Order food or a drink at a taquería or café." },
+    { "level": "A1", "text": "Ask how much something costs and understand the answer." },
+    { "level": "A1", "text": "Say what I like and don't like." },
+    { "level": "A1", "text": "Ask someone to repeat or speak more slowly." },
+
+    { "level": "A2", "text": "Describe my daily routine and my family." },
+    { "level": "A2", "text": "Make plans with a friend (day, time, place)." },
+    { "level": "A2", "text": "Tell what I did last weekend in a few sentences." },
+    { "level": "A2", "text": "Ask for and follow simple directions in a town." },
+    { "level": "A2", "text": "Handle a simple phone call (e.g. confirm a reservation)." },
+
+    { "level": "B1", "text": "Tell a story about something that happened to me, with details, in the past." },
+    { "level": "B1", "text": "Keep a casual conversation going with friends or family for 10+ minutes." },
+    { "level": "B1", "text": "Explain a problem and ask for a solution (landlord, store, doctor)." },
+    { "level": "B1", "text": "Give my opinion and briefly say why." },
+    { "level": "B1", "text": "Follow most of a group conversation at a meetup when people speak clearly." },
+
+    { "level": "B2", "text": "Argue for a point of view and respond to counter-arguments." },
+    { "level": "B2", "text": "Talk about hypothetical situations (what I would do if…)." },
+    { "level": "B2", "text": "Keep up with native speakers talking at normal speed among themselves." },
+    { "level": "B2", "text": "Rephrase when I don't know a word, without switching to English." },
+    { "level": "B2", "text": "Adjust formality (tú/usted) and tone to the situation." }
+  ],
+  "maxSeconds": 90,
+  "recognitionLang": "es-MX",
+  "tasks": {
+    "A": [
+      { "id": "sA-a2", "level": "A2", "seconds": 60, "prompt": "Describe a normal weekday for you, from morning to night.", "hint": "Me levanto a las… Después… Por la noche…" },
+      { "id": "sA-b1", "level": "B1", "seconds": 90, "prompt": "Tell about a memorable meal or celebration with family or friends. What happened?", "hint": "Hace unos años… Estábamos… De repente…" },
+      { "id": "sA-b2", "level": "B2", "seconds": 90, "prompt": "If you could live in any Spanish-speaking city for a year, which would it be and why? What would you do there?", "hint": "Si pudiera… viviría en… porque…" }
+    ],
+    "B": [
+      { "id": "sB-a2", "level": "A2", "seconds": 60, "prompt": "Talk about your family or the people you live with.", "hint": "En mi casa vivimos… Mi… es…" },
+      { "id": "sB-b1", "level": "B1", "seconds": 90, "prompt": "Talk about {interests}: how you got into it and why you like it.", "hint": "Empecé a… cuando… Lo que más me gusta es…" },
+      { "id": "sB-b2", "level": "B2", "seconds": 90, "prompt": "Some people say phones are ruining conversation at family meals. Do you agree? Give your opinion and an example.", "hint": "Por un lado… Por otro lado… Yo creo que…" }
+    ]
+  },
+  "selfRatings": [
+    { "key": "fluency", "label": "How smoothly did you speak?", "options": ["Kept going", "Some pauses", "Lots of pauses", "Mostly stuck"] },
+    { "key": "english", "label": "Did you switch to English?", "options": ["Never", "A word or two", "Several times", "A lot"] },
+    { "key": "words", "label": "Did you lack words you needed?", "options": ["Rarely", "Sometimes", "Often"] }
+  ]
+}

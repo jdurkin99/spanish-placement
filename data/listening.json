@@ -1,0 +1,91 @@
+{
+  "_about": "Listening comprehension. One clip per CEFR level, taken in order A1 → B2, scored like reading. AUDIO IS PLACEHOLDER: every clip's audio.src below is a marked placeholder. Until you replace it, the app reads the transcript aloud with the phone's built-in Spanish text-to-speech voice (Mexican voice preferred), and the results packet says so. TO ADD REAL AUDIO: put an .mp3/.m4a file in /audio (e.g. audio/lA-a1.mp3), set audio.src to that path, and set audio.placeholder to false. Keep transcript matching the recording; it's never shown during the test. maxPlays = how many times the clip can be played.",
+  "maxPlays": 2,
+  "tts": { "lang": "es-MX", "fallbackLangs": ["es-US", "es-419", "es"], "rate": { "A1": 0.8, "A2": 0.85, "B1": 0.95, "B2": 1.0 } },
+  "forms": {
+    "A": [
+      {
+        "id": "lA-a1", "level": "A1", "title": "Mensaje de voz",
+        "audio": { "src": "PLACEHOLDER: audio/lA-a1.mp3 (replace me)", "placeholder": true },
+        "transcript": "Hola, Ana, soy Pedro. Mañana no puedo ir al cine a las cinco, porque tengo que trabajar. ¿Podemos ir el domingo a las siete? Llámame esta noche, por favor. Mi número nuevo es el tres, tres, uno, cuatro, cero, ocho, dos. Gracias. Adiós.",
+        "questions": [
+          { "q": "Why can't Pedro go tomorrow?", "answer": "He has to work.", "distractors": ["He is sick.", "He has no money.", "He has to study."] },
+          { "q": "What does he suggest?", "answer": "Sunday at seven.", "distractors": ["Saturday at five.", "Tomorrow at seven.", "Sunday at five."] },
+          { "q": "What does he ask Ana to do?", "answer": "Call him tonight.", "distractors": ["Buy the tickets.", "Send him a message tomorrow.", "Meet him at the theater."] }
+        ]
+      },
+      {
+        "id": "lA-a2", "level": "A2", "title": "Anuncio en la central de autobuses",
+        "audio": { "src": "PLACEHOLDER: audio/lA-a2.mp3 (replace me)", "placeholder": true },
+        "transcript": "Atención, pasajeros con destino a Oaxaca. El autobús de las tres y media va a salir con cuarenta minutos de retraso por un problema mecánico. La salida ya no es por el andén cuatro, sino por el andén nueve. Los pasajeros que quieran cambiar su boleto para el autobús de las cinco pueden pasar a la taquilla número dos sin costo adicional. Les ofrecemos una disculpa por las molestias.",
+        "questions": [
+          { "q": "What is the problem?", "answer": "The bus is delayed about 40 minutes.", "distractors": ["The bus is canceled.", "The bus is full.", "The bus left early."] },
+          { "q": "Where does the bus leave from now?", "answer": "Platform 9.", "distractors": ["Platform 4.", "Platform 2.", "Platform 5."] },
+          { "q": "What can passengers do at ticket window 2?", "answer": "Switch to the 5 o'clock bus for free.", "distractors": ["Get a full refund.", "Buy food for the trip.", "Pay to upgrade their seat."] }
+        ]
+      },
+      {
+        "id": "lA-b1", "level": "B1", "title": "Una amiga cuenta su fin de semana",
+        "audio": { "src": "PLACEHOLDER: audio/lA-b1.mp3 (replace me)", "placeholder": true },
+        "transcript": "¿Qué crees? El sábado fuimos a Tepoztlán con mis primos. Queríamos subir al Tepozteco temprano, pero nos quedamos dormidos y llegamos al pueblo como a las doce. Ya había un montón de gente y hacía un calor horrible, así que mejor decidimos comer primero en el mercado. Después de comer ya nadie tenía ganas de subir, la verdad. Al final nos quedamos paseando, compramos unas artesanías y regresamos en la noche. No subimos la pirámide, pero la pasamos muy bien. La próxima vez salimos a las seis, te lo juro.",
+        "questions": [
+          { "q": "Why did they arrive late?", "answer": "They overslept.", "distractors": ["There was traffic.", "Their car broke down.", "They got lost."] },
+          { "q": "Did they climb to the pyramid?", "answer": "No, they stayed in town instead.", "distractors": ["Yes, after lunch.", "Yes, early in the morning.", "Only some of the cousins did."] },
+          { "q": "What does she promise for next time?", "answer": "To leave at six.", "distractors": ["To go without her cousins.", "To eat after the climb.", "To stay overnight."] }
+        ]
+      },
+      {
+        "id": "lA-b2", "level": "B2", "title": "Podcast: aprender idiomas de adulto",
+        "audio": { "src": "PLACEHOLDER: audio/lA-b2.mp3 (replace me)", "placeholder": true },
+        "transcript": "Mucha gente cree que, pasada cierta edad, ya no se puede aprender bien un idioma. Es cierto que los niños suelen adquirir una pronunciación más natural, pero los adultos tienen ventajas que a menudo se subestiman: saben organizar su tiempo, entienden reglas abstractas y pueden aprovechar lo que ya saben de su propia lengua. Lo que realmente marca la diferencia no es la edad, sino la constancia. Quince minutos diarios dan mejores resultados que tres horas un solo día a la semana. Y, sobre todo, hay que perderle el miedo a equivocarse: quien no se atreve a hablar hasta que todo le salga perfecto, probablemente nunca hable.",
+        "questions": [
+          { "q": "According to the speaker, what advantage do children usually have?", "answer": "More natural pronunciation.", "distractors": ["Better grammar.", "More free time.", "Larger vocabularies."] },
+          { "q": "What matters most, according to the speaker?", "answer": "Consistency.", "distractors": ["Age.", "Talent.", "Living abroad."] },
+          { "q": "What is the final piece of advice?", "answer": "Don't wait until you're perfect to speak.", "distractors": ["Study three hours once a week.", "Focus on pronunciation first.", "Avoid making mistakes when speaking."] }
+        ]
+      }
+    ],
+    "B": [
+      {
+        "id": "lB-a1", "level": "A1", "title": "En la tienda",
+        "audio": { "src": "PLACEHOLDER: audio/lB-a1.mp3 (replace me)", "placeholder": true },
+        "transcript": "Buenas tardes. Hoy en la tienda tenemos ofertas. El kilo de tomate está a veinte pesos y el kilo de plátano a quince. El pan dulce cuesta seis pesos la pieza. La tienda cierra hoy a las nueve de la noche. Mañana, domingo, abrimos a las diez de la mañana. Gracias por su visita.",
+        "questions": [
+          { "q": "How much is a kilo of tomatoes?", "answer": "20 pesos.", "distractors": ["15 pesos.", "6 pesos.", "12 pesos."] },
+          { "q": "What time does the store close today?", "answer": "9 p.m.", "distractors": ["10 p.m.", "10 a.m.", "7 p.m."] },
+          { "q": "When does it open tomorrow?", "answer": "10 a.m.", "distractors": ["9 a.m.", "It's closed tomorrow.", "Noon."] }
+        ]
+      },
+      {
+        "id": "lB-a2", "level": "A2", "title": "Mensaje del doctor",
+        "audio": { "src": "PLACEHOLDER: audio/lB-a2.mp3 (replace me)", "placeholder": true },
+        "transcript": "Buenos días, le hablamos del consultorio del doctor Ramírez para confirmar su cita del jueves a las once. Le recordamos que tiene que venir en ayunas, es decir, sin desayunar, porque le vamos a hacer unos análisis de sangre. Traiga por favor su identificación y la receta anterior. Si no puede venir, llámenos un día antes para darle otra fecha.",
+        "questions": [
+          { "q": "Why is the office calling?", "answer": "To confirm an appointment.", "distractors": ["To cancel an appointment.", "To give test results.", "To ask for a payment."] },
+          { "q": "What must the patient do before coming?", "answer": "Not eat breakfast.", "distractors": ["Drink a lot of water.", "Take their medicine.", "Arrive an hour early."] },
+          { "q": "What should the patient bring?", "answer": "ID and the previous prescription.", "distractors": ["A blood sample.", "Their insurance card only.", "Breakfast for after the test."] }
+        ]
+      },
+      {
+        "id": "lB-b1", "level": "B1", "title": "Un vecino se queja",
+        "audio": { "src": "PLACEHOLDER: audio/lB-b1.mp3 (replace me)", "placeholder": true },
+        "transcript": "Oye, perdona que te moleste, pero quería comentarte algo. Desde que llegaron los nuevos vecinos del tercer piso, cada fin de semana hay fiesta hasta las cuatro de la mañana. Yo no tengo nada en contra de que se diviertan, pero mi hija tiene que levantarse temprano los sábados para ir a su clase de natación. Ya hablé con ellos una vez y me dijeron que iban a bajar el volumen, pero siguió igual. Estaba pensando en escribirle al administrador del edificio. ¿Tú qué opinas? ¿Te parece buena idea o primero hablo con ellos otra vez?",
+        "questions": [
+          { "q": "What is the neighbor's complaint?", "answer": "Loud parties until 4 a.m. on weekends.", "distractors": ["The new neighbors never say hello.", "Someone uses his parking spot.", "Construction noise every morning."] },
+          { "q": "Why does it bother him in particular?", "answer": "His daughter gets up early on Saturdays.", "distractors": ["He works night shifts.", "He has a new baby.", "He was not invited."] },
+          { "q": "What is he asking the listener?", "answer": "Whether to write to the building manager or talk to them again.", "distractors": ["Whether to call the police.", "Whether the listener can hear the noise too.", "Whether he should move out."] }
+        ]
+      },
+      {
+        "id": "lB-b2", "level": "B2", "title": "Radio: el regreso de las bicicletas",
+        "audio": { "src": "PLACEHOLDER: audio/lB-b2.mp3 (replace me)", "placeholder": true },
+        "transcript": "En los últimos años, cada vez más ciudades latinoamericanas han apostado por la bicicleta como medio de transporte. Bogotá suele citarse como ejemplo, pero ciudades como Guadalajara o San José también han ampliado sus ciclovías. Los críticos señalan que las nuevas vías les quitan espacio a los coches y empeoran el tráfico, al menos al principio. Los urbanistas responden que el tráfico no se reduce construyendo más calles, ya que estas se llenan enseguida, y que solo ofreciendo alternativas seguras la gente deja el coche. Eso sí, reconocen que sin estacionamientos para bicis y sin conexión con el transporte público, una ciclovía aislada sirve de poco.",
+        "questions": [
+          { "q": "What do critics say about new bike lanes?", "answer": "They take space from cars and worsen traffic at first.", "distractors": ["They are too expensive to build.", "Nobody uses them.", "They are dangerous for pedestrians."] },
+          { "q": "Why don't more streets reduce traffic, according to urban planners?", "answer": "New streets fill up right away.", "distractors": ["People prefer the bus.", "Cities can't afford them.", "Streets are too narrow."] },
+          { "q": "What do the planners admit?", "answer": "An isolated bike lane without parking or transit connections isn't very useful.", "distractors": ["Bike lanes have failed in Bogotá.", "Cars will always be necessary.", "Critics are mostly right."] }
+        ]
+      }
+    ]
+  }
+}

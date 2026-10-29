@@ -1,25 +1,80 @@
 {
-  "appVersion": "1.0.0",
+  "appVersion": "1.1.0",
   "retestIntervalDays": 21,
-  "forms": ["A", "B"],
+  "forms": [
+    "A",
+    "B"
+  ],
   "vocab": {
     "bands": [
-      { "id": "1k",  "label": "1–1k",   "size": 1000 },
-      { "id": "2k",  "label": "1k–2k",  "size": 1000 },
-      { "id": "3k",  "label": "2k–3k",  "size": 1000 },
-      { "id": "5k",  "label": "3k–5k",  "size": 2000 },
-      { "id": "10k", "label": "5k–10k", "size": 5000 }
+      {
+        "id": "1k",
+        "label": "1–1k",
+        "size": 1000
+      },
+      {
+        "id": "2k",
+        "label": "1k–2k",
+        "size": 1000
+      },
+      {
+        "id": "3k",
+        "label": "2k–3k",
+        "size": 1000
+      },
+      {
+        "id": "5k",
+        "label": "3k–5k",
+        "size": 2000
+      },
+      {
+        "id": "10k",
+        "label": "5k–10k",
+        "size": 5000
+      }
     ],
-    "regionalBand": { "id": "mx", "label": "Mexican / Central American" },
+    "regionalBand": {
+      "id": "mx",
+      "label": "Mexican / Central American"
+    },
     "mcOptionCount": 4,
-    "targetMinutes": { "lextale": 3, "meaning": 5, "production": 3 }
+    "targetMinutes": {
+      "lextale": 3,
+      "meaning": 5,
+      "production": 3
+    }
   },
   "grammar": {
-    "levels": ["A1", "A2", "B1", "B2"],
+    "levels": [
+      "A1",
+      "A2",
+      "B1",
+      "B2"
+    ],
     "defaultStartLevel": "A2",
     "passThreshold": 0.75,
     "failThreshold": 0.5,
     "passAfterFollowupThreshold": 0.65,
     "targetMinutes": 15
+  },
+  "comprehension": {
+    "passThreshold": 0.66,
+    "stopBelow": 0.5,
+    "levels": [
+      "A1",
+      "A2",
+      "B1",
+      "B2"
+    ],
+    "targetMinutes": {
+      "reading": 15,
+      "listening": 10
+    }
+  },
+  "writing": {
+    "targetMinutes": 15
+  },
+  "speaking": {
+    "targetMinutes": 12
   }
 }

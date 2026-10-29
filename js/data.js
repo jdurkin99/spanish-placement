@@ -6,7 +6,11 @@ const FILES = {
   lextale: 'data/vocab-lextale.json',
   meaning: 'data/vocab-meaning.json',
   production: 'data/vocab-production.json',
-  grammar: 'data/grammar.json'
+  grammar: 'data/grammar.json',
+  reading: 'data/reading.json',
+  listening: 'data/listening.json',
+  writing: 'data/writing.json',
+  speaking: 'data/speaking.json'
 };
 
 export const D = {};

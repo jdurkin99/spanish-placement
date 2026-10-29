@@ -2,16 +2,21 @@
 import { D, loadData } from './data.js';
 import { getState, update, exportJSON, importJSON, resetAll, attemptsFor, lastAttempt } from './store.js';
 import { esc, fmtDate, downloadFile, copyText, ymd } from './util.js';
-import { toast } from './ui.js';
+import { toast, runLeaveHooks } from './ui.js';
 import * as vocab from './vocab.js';
 import * as grammar from './grammar.js';
+import { renderComprehension } from './comprehension.js';
+import { renderWriting } from './writing.js';
+import { renderSpeakingHome, renderSpeakingPart } from './speaking.js';
 import { buildPacket, retestStatus } from './report.js';
 
 const app = document.getElementById('app');
 
+// Render right away. Waiting for the async hashchange would leave the old screen
+// tappable for a moment after a section's session has already been cleared.
 function go(hash) {
-  if (location.hash === hash) route();
-  else location.hash = hash;
+  if (location.hash !== hash) history.pushState(null, '', hash);
+  route();
 }
 
 function ensureProfile() {
@@ -53,6 +58,19 @@ function renderHome() {
         <span class="sc-sub">${gLast ? `Last: ${esc(gLast.result.placement)}` : 'A1 → B2 structures'}</span>
         ${sectionStatus('grammar')}
       </a>
+      ${[
+        ['reading', '4 · Reading', `~${D.config.comprehension.targetMinutes.reading} min`, 'Short texts, A1 → B2', a => `Last: ${esc(a.result.placement)}`],
+        ['listening', '5 · Listening', `~${D.config.comprehension.targetMinutes.listening} min`, 'Short clips, A1 → B2', a => `Last: ${esc(a.result.placement)}`],
+        ['writing', '6 · Writing', `~${D.config.writing.targetMinutes} min`, '3 short texts for your tutor to grade', a => `Last: ${a.result.done} text(s) written`],
+        ['speaking', '7 · Speaking', `~${D.config.speaking.targetMinutes} min`, 'Can-do checklist + speak aloud', a => `Last: self-assessed ${esc(a.result.selfLevel)}`]
+      ].map(([id, title, time, sub, last]) => {
+        const a = lastAttempt(id);
+        return `<a class="section-card" href="#/${id}">
+          <span class="sc-title">${title} <small>${time}</small></span>
+          <span class="sc-sub">${a ? last(a) : sub}</span>
+          ${sectionStatus(id)}
+        </a>`;
+      }).join('')}
       <a class="section-card accent" href="#/results">
         <span class="sc-title">Results packet →</span>
         <span class="sc-sub">Copy for your tutor · progress history</span>
@@ -136,9 +154,49 @@ function grammarSummary(a) {
   </section>`;
 }
 
+function comprehensionSummary(kind, a) {
+  const r = a.result;
+  const title = kind === 'reading' ? 'Reading' : 'Listening';
+  return `<section class="card">
+    <h2>${title} <small class="muted">Form ${esc(a.form)} · ${fmtDate(a.finishedAt)}</small></h2>
+    <div class="stats">
+      <div class="stat"><b>${esc(r.placement)}</b><span>level${r.ceiling ? ' (test ceiling)' : ''}</span></div>
+      <div class="stat"><b>${r.total.correct}/${r.total.n}</b><span>questions correct</span></div>
+    </div>
+    <p class="small">${r.levels.map(l => `<span class="pill ${l.status === 'pass' ? 'ok' : l.status === 'fail' ? 'warn' : ''}">${l.level}: ${l.n ? `${l.correct}/${l.n}` : l.status}</span>`).join(' ')}</p>
+    ${r.usedTTS ? '<p class="small muted">Played with the device voice (no recordings yet).</p>' : ''}
+    ${r.missed.length ? `<details><summary>Missed questions (${r.missed.length})</summary><ul class="misses">${r.missed.map(m => `<li>[${m.level}] ${esc(m.q)}<br><span class="muted">you: ${esc(m.chose)} · correct: ${esc(m.answer)}</span></li>`).join('')}</ul></details>` : ''}
+  </section>`;
+}
+
+function writingSummary(a) {
+  return `<section class="card">
+    <h2>Writing <small class="muted">Form ${esc(a.form)} · ${fmtDate(a.finishedAt)}</small></h2>
+    <p class="small muted">Not auto-scored: your tutor grades these from the packet.</p>
+    ${a.result.tasks.map(t => `<details><summary>${t.level}: ${t.skipped ? 'skipped' : `${t.words} words`}</summary>
+      <p class="small muted">${esc(t.prompt)}</p>${t.skipped ? '' : `<p lang="es" class="quote">${esc(t.text)}</p>`}</details>`).join('')}
+  </section>`;
+}
+
+function speakingSummary(a) {
+  const r = a.result;
+  return `<section class="card">
+    <h2>Speaking <small class="muted">Form ${esc(a.form)} · ${fmtDate(a.finishedAt)}</small></h2>
+    <div class="stats">
+      <div class="stat"><b>${esc(r.selfLevel)}</b><span>self-assessed level</span></div>
+      <div class="stat"><b>${r.tasks.filter(t => t.method !== 'skipped').length}/${r.tasks.length}</b><span>prompts answered</span></div>
+    </div>
+    <div class="bars">${r.canDo.levels.map(l => `<div class="bar-row"><span class="bar-label">${l.level}</span><span class="bar"><span style="width:${l.avg}%"></span></span><span class="bar-val">${l.avg}%</span></div>`).join('')}</div>
+    ${r.tasks.map(t => `<details><summary>${t.level}: ${t.method === 'skipped' ? 'skipped' : `${t.seconds}s`}</summary>
+      <p class="small muted">${esc(t.prompt)}</p>${t.transcript ? `<p lang="es" class="quote">${esc(t.transcript)}</p>` : ''}</details>`).join('')}
+  </section>`;
+}
+
 function historyTable() {
   const v = attemptsFor('vocab'), g = attemptsFor('grammar');
-  if (v.length + g.length < 2) return '';
+  const others = ['reading', 'listening', 'speaking'].flatMap(k => attemptsFor(k).map(a => ({ k, a })))
+    .sort((x, y) => x.a.finishedAt.localeCompare(y.a.finishedAt));
+  if (v.length + g.length + others.length < 2) return '';
   return `<section class="card"><h2>Progress</h2>
     ${v.length ? `<table class="hist"><thead><tr><th>Date</th><th>Form</th><th>Words</th><th>Recog.</th><th>Typed</th></tr></thead><tbody>
       ${v.map(a => `<tr><td>${ymd(a.finishedAt)}</td><td>${a.form}</td><td>${a.result.meaning.sizeEstimate}</td><td>${a.result.lextale.score}</td><td>${a.result.production.correct}/${a.result.production.n}</td></tr>`).join('')}
@@ -146,11 +204,17 @@ function historyTable() {
     ${g.length ? `<table class="hist"><thead><tr><th>Date</th><th>Grammar</th><th>Correct</th></tr></thead><tbody>
       ${g.map(a => `<tr><td>${ymd(a.finishedAt)}</td><td>${esc(a.result.placement)}${a.result.inProgress ? ` → ${a.result.inProgress.level} ${a.result.inProgress.correct}/${a.result.inProgress.n}` : ''}</td><td>${a.result.total.correct}/${a.result.total.n}</td></tr>`).join('')}
     </tbody></table>` : ''}
+    ${others.length ? `<table class="hist"><thead><tr><th>Date</th><th>Section</th><th>Level</th></tr></thead><tbody>
+      ${others.map(({ k, a }) => `<tr><td>${ymd(a.finishedAt)}</td><td>${k}</td><td>${esc(k === 'speaking' ? `${a.result.selfLevel} (self)` : `${a.result.placement} · ${a.result.total.correct}/${a.result.total.n}`)}</td></tr>`).join('')}
+    </tbody></table>` : ''}
   </section>`;
 }
 
+const notTaken = (title, href) => `<section class="card"><h2>${title}</h2><p class="muted">Not taken yet. <a href="${href}">Start →</a></p></section>`;
+
 function renderResults() {
   const v = lastAttempt('vocab'), g = lastAttempt('grammar');
+  const rd = lastAttempt('reading'), li = lastAttempt('listening'), w = lastAttempt('writing'), sp = lastAttempt('speaking');
   const packet = buildPacket();
   app.innerHTML = `
     <section class="card">
@@ -163,7 +227,11 @@ function renderResults() {
       <details><summary>Preview packet</summary><pre class="packet">${esc(packet)}</pre></details>
     </section>
     ${v ? vocabSummary(v) : '<section class="card"><h2>Vocabulary</h2><p class="muted">Not taken yet. <a href="#/vocab">Start →</a></p></section>'}
-    ${g ? grammarSummary(g) : '<section class="card"><h2>Grammar</h2><p class="muted">Not taken yet. <a href="#/grammar">Start →</a></p></section>'}
+    ${g ? grammarSummary(g) : notTaken('Grammar', '#/grammar')}
+    ${rd ? comprehensionSummary('reading', rd) : notTaken('Reading', '#/reading')}
+    ${li ? comprehensionSummary('listening', li) : notTaken('Listening', '#/listening')}
+    ${w ? writingSummary(w) : notTaken('Writing', '#/writing')}
+    ${sp ? speakingSummary(sp) : notTaken('Speaking', '#/speaking')}
     ${historyTable()}
     <a class="btn btn-ghost" href="#/">Home</a>`;
   app.querySelector('[data-action=copy]').addEventListener('click', async () => {
@@ -214,12 +282,17 @@ function renderData() {
 
 function route() {
   const [, section, sub] = (location.hash || '#/').split('/');
+  runLeaveHooks();
   window.scrollTo(0, 0);
   document.body.dataset.view = section || 'home';
   switch (section) {
     case 'profile': return renderProfile();
     case 'vocab': return sub ? vocab.renderPart(app, go, sub) : vocab.renderVocabHome(app, go);
     case 'grammar': return grammar.renderGrammar(app, go);
+    case 'reading': return renderComprehension('reading', app, go);
+    case 'listening': return renderComprehension('listening', app, go);
+    case 'writing': return renderWriting(app, go);
+    case 'speaking': return sub ? renderSpeakingPart(app, go, sub) : renderSpeakingHome(app, go);
     case 'results': return renderResults();
     case 'data': return renderData();
     default: return renderHome();

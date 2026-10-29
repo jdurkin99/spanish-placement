@@ -34,3 +34,25 @@ export function toast(msg) {
 }
 
 export const ACCENT_KEYS = ['á', 'é', 'í', 'ó', 'ú', 'ñ', 'ü'];
+
+// Cleanup hooks (timers, audio, speech) run whenever the route changes.
+const leaveHooks = [];
+export function onLeave(fn) { leaveHooks.push(fn); }
+export function runLeaveHooks() {
+  while (leaveHooks.length) {
+    try { leaveHooks.pop()(); } catch (e) { console.error(e); }
+  }
+}
+
+export function formPicker(id, forms, selected, suggested) {
+  return `<label class="field"><span>Test form</span>
+    <select id="${id}">${forms.map(f => `<option ${f === selected ? 'selected' : ''}>${f}</option>`).join('')}</select>
+    <small class="muted">Alternate forms for retests. Suggested: Form ${suggested}.</small>
+  </label>`;
+}
+
+// First interest from the profile (e.g. "Liga MX" from "Liga MX, cumbia, cooking").
+export function interestsText(profile, fallback) {
+  const first = (profile?.interests || '').split(/[,;\n]/)[0].trim();
+  return first || fallback;
+}
